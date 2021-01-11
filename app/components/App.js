@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 function App() {
     return (
@@ -15,10 +14,4 @@ function App() {
     )
 }
 
-function select(state) {
-    return {
-        data: state,
-    }
-}
-
-export default connect(select)(App)
+export default App

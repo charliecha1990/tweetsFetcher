@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react'
-import { connect } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
@@ -43,12 +42,5 @@ function FetchButton() {
     )
 }
 
-// Which props do we want to inject, given the global state?
-function select(state) {
-    return {
-        data: state,
-    }
-}
-
 // Wrap the component to inject dispatch and state into it
-export default connect(select)(FetchButton)
+export default FetchButton

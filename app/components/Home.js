@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { connect, useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Grid from '@material-ui/core/Grid'
 import FetchButton from './FetchButton'
 import Table from './Table'
@@ -47,10 +47,4 @@ function Home() {
     )
 }
 
-function select(state) {
-    return {
-        data: state,
-    }
-}
-
-export default connect(select)(Home)
+export default Home
