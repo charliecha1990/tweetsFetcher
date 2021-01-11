@@ -1,24 +1,22 @@
 {
-    "name": "saga-login-flow",
+    "name": "tweetsFetcher",
     "version": "0.0.0",
-    "description": "A login/register flow built with React & Redux Saga",
+    "description": "A tweets fetch flow built with React & Redux Saga",
     "scripts": {
         "start": "node server.js",
         "build": "webpack --config webpack/prod.js --progress --colors -p",
         "test": "standard | snazzy --verbose && NODE_ENV=test ava --verbose",
         "deploy": "npm run build && surge -p build -d saga-login-flow.surge.sh"
     },
-    "repository": "sotojuan/login-flow",
+    "repository": "",
     "author": {
-        "name": "Juan Soto",
-        "email": "juan@juansoto.me",
-        "url": "juansoto.me"
+        "name": "charlieZha"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/sotojuan/saga-login-flow/issues"
+        "url": ""
     },
-    "homepage": "https://github.com/sotojuan/saga-login-flow#readme",
+    "homepage": "",
     "devDependencies": {
         "autoprefixer": "^6.6.1",
         "ava": "^0.19.1",
