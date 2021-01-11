@@ -1,43 +1,18 @@
 import test from 'ava'
 import {actionTest} from 'redux-ava'
 import {
-  changeForm,
-  setAuthState,
-  sendingRequest,
-  loginRequest,
-  registerRequest,
-  logout,
-  requestError,
-  clearError
+  fetchTweetsRequest,
+  fetchTweetsRequestError
 } from '../app/actions'
 
-const formState = {
-  username: 'juan',
-  password: 'password'
-}
 
-const error = 'Wrong password'
+const BILL_CLINTON = 'BillClinton';
+const HILLARY_CLINTON = 'HillaryClinton';
 
-test('changeForm action',
-  actionTest(changeForm, formState, {type: 'CHANGE_FORM', newFormState: formState}))
+const errorMessage = 'Ooooops! Error in fetching tweets'
 
-test('setAuthState action',
-  actionTest(setAuthState, true, {type: 'SET_AUTH', newAuthState: true}))
+test('fetchTweetsRequest action',
+  actionTest(fetchTweetsRequest, userName, { type: 'FETCH_TWEETS_REQUEST', userName: BILL_CLINTON || HILLARY_CLINTON }))
 
-test('sendingRequest action',
-  actionTest(sendingRequest, true, {type: 'SENDING_REQUEST', sending: true}))
-
-test('loginRequest action',
-  actionTest(loginRequest, formState, {type: 'LOGIN_REQUEST', data: formState}))
-
-test('registerRequest action',
-  actionTest(registerRequest, formState, {type: 'REGISTER_REQUEST', data: formState}))
-
-test('logout action',
-  actionTest(logout, formState, {type: 'LOGOUT'}))
-
-test('requestError action',
-  actionTest(requestError, error, {type: 'REQUEST_ERROR', error}))
-
-test('clearError action',
-  actionTest(clearError, error, {type: 'CLEAR_ERROR'}))
+test('fetchTweetsRequestError action',
+  actionTest(fetchTweetsRequestError, error, { type: 'FETCH_TWEETS_REQUEST_ERROR', error:  errorMessage }))
